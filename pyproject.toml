@@ -9,7 +9,6 @@ exclude = [
     "**/node_modules",
     "**/__pycache__",
     "**/.*",
-    "tests"
 ]
 pythonVersion = "3.12"
 pythonPlatform = "All"
@@ -30,3 +29,23 @@ include = '\.pyi?$'
 profile = "black"
 multi_line_output = 3
 py_version = 312
+
+[tool.poetry]
+name = "resume-parser-uploader"
+version = "0.1.0"
+description = ""
+authors = ["Hristo <sandevh@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+redis = "^5.2.0"
+pypdf2 = "^3.0.1"
+langchain = {extras = ["openai"], version = "^0.3.9"}
+langchain-openai = "^0.2.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
