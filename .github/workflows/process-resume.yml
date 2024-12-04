@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PYTHON_VERSION: "3.10"
-      API_KEY: ${{ secrets.API_KEY }}
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      PYTHON_VERSION: "3.12"
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      REDIS_URL: ${{ secrets.REDIS_URL }}
 
     steps:
       - name: Checkout repository
