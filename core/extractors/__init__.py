@@ -1,1 +1,1 @@
-from file_extractor import *
+from .file_extractor import *

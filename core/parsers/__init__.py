@@ -1,1 +1,1 @@
-from llm_parser import *
+from .llm_parser import *

@@ -1,3 +1,3 @@
-from functional import *
-from files import *
-from processing import *
+from .functional import *
+from .files import *
+from .processing import *
