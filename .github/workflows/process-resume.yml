@@ -1,0 +1,48 @@
+
+name: Process Resume
+
+on:
+  push:
+    paths:
+      - 'resume.pdf'
+    branches:
+      - main
+
+jobs:
+  process-resume:
+    runs-on: ubuntu-latest
+
+    env:
+      PYTHON_VERSION: "3.10"
+      API_KEY: ${{ secrets.API_KEY }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Configure Poetry
+        run: |
+          poetry config virtualenvs.create true
+          poetry config virtualenvs.in-project true
+
+      - name: Cache Poetry dependencies
+        uses: actions/cache@v3
+        with:
+          path: ./.venv
+          key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+
+      - name: Install dependencies
+        run: poetry install --no-interaction
+
+      - name: Run main.py
+        run: poetry run python main.py
