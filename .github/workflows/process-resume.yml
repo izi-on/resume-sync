@@ -47,5 +47,5 @@ jobs:
       - name: Run main.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          REDIS_URL: ${{ secrets.REDIS_URL }}
+          MONGO_PUBLIC_URL: ${{ secrets.MONGO_PUBLIC_URL }}
         run: poetry run python main.py
