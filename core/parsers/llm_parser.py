@@ -1,3 +1,4 @@
+import os
 from core.types import Parser
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
@@ -19,7 +20,11 @@ def get_llm_file_parser(prompt: str) -> Parser:
             },
         )
 
-        llm = ChatOpenAI(temperature=0, model="gpt-4o")
+        llm = ChatOpenAI(
+            temperature=0,
+            model="gpt-4o",
+            openai_api_key=os.environ.get("OPENAI_API_KEY"),  # otherwise CI fails?
+        )
 
         chain = LLMChain(llm=llm, prompt=prompt_template, output_parser=json_parser)
 
