@@ -16,8 +16,6 @@ jobs:
 
     env:
       PYTHON_VERSION: "3.12"
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      REDIS_URL: ${{ secrets.REDIS_URL }}
 
     steps:
       - name: Checkout repository
@@ -47,4 +45,7 @@ jobs:
         run: poetry install --no-interaction
 
       - name: Run main.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REDIS_URL: ${{ secrets.REDIS_URL }}
         run: poetry run python main.py

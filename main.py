@@ -6,7 +6,7 @@ from core.database import redis_client
 from core.utils import get_full_filename, pipeline, to_json_str
 from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 resume_parse_and_upload = pipeline(
     get_file_extractor(get_full_filename(RESUME_KEY)),
