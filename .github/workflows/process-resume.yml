@@ -8,6 +8,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:    # Allows manual triggers
+
 jobs:
   process-resume:
     runs-on: ubuntu-latest
