@@ -1,6 +1,5 @@
 from typing import Any, Callable
 
-JsonStr = str
 Parser = Callable[[str], dict]
-Uploader = Callable[[JsonStr], JsonStr]
+Uploader = Callable[[dict], dict]
 Extractor = Callable[[Any], str]
