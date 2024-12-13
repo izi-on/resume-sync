@@ -1,10 +1,10 @@
-from core.repositories.resume_repository import IResumeRepository
+from core.repositories.resume_repository import ResumeRepository
 from core.types import Uploader
 from core.uploaders.abc import IUploader
 
 
 class ResumeService(IUploader):
-    def __init__(self, repository: IResumeRepository):
+    def __init__(self, repository: ResumeRepository):
         self.repository = repository
 
     def upload(self, resume: dict):

@@ -1,4 +1,4 @@
-from core.config import PROMPT, RESUME_KEY
+from core.config import ALLOWED_TITLES, PROMPT, RESUME_KEY
 from core.database.mongodb import mongo_client
 from core.extractors import get_file_extractor
 from core.parsers import get_llm_file_parser
@@ -14,7 +14,7 @@ resume_service = ResumeService(MongoResumeRepository(mongo_client()))
 
 resume_parse_and_upload = pipeline(
     get_file_extractor(get_full_filename(RESUME_KEY)),
-    get_llm_file_parser(PROMPT),
+    get_llm_file_parser(PROMPT, ALLOWED_TITLES),
     get_pretty_printer(),  # for debugging or printing
     resume_service.get_uploader(),
 )
