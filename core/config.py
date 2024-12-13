@@ -26,6 +26,7 @@ Text: {input_text}
 
 RESUME_KEY = "resume"
 
+# TODO: sync this with frontend
 ALLOWED_TITLES = [
     "Contact Information",
     "Education",
