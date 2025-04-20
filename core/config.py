@@ -20,6 +20,10 @@ the same meaning, rewrite them:
 If the object is not a direct child of the root, it can have
 any title.
 
+If you are to a add a duration in the content section, please follow the following format:
+
+"Duration: 09/2022 – 04/2026"
+
 Parse the following text and extract relevant information into JSON format.
 Text: {input_text}
 """
