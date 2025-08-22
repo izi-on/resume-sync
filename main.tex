@@ -1,0 +1,168 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure PDF is ATS parsable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Hristo Sandev} \\ \vspace{1pt}
+    \small +1 (438) 491-5886 $|$ 
+    \href{https://www.izion.dev/}{\underline{izion.dev}} $|$ 
+    \href{https://www.linkedin.com/in/hristo-sandev-7b8059172/}{\underline{linkedin.com/in/hristo-sandev}} \\
+\end{center}
+
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Shopify}{May 2025 -- Aug. 2025}
+      {Software Engineer Intern}{}
+      \resumeItemListStart
+        \resumeItem{Created an automatic, robust and highly configurable courier data ingestion pipeline indexing ElasticSearch instances with latest data to serve address geocoding, autocompletion, and validation requests, \textbf{improving checkout address validation rate by 1.5x}.}
+        \resumeItem{Refactored address geocoding and validation code for checkout, \textbf{halving address-related errors}.}
+        \resumeItem{Resolved a dozen SEV-2 bugs, \textbf{improving checkout experience for millions of global users}.}
+        \resumeItem{Built an abstraction layer to unify address validation APIs (Melissa, Smarty) with Shopify’s address format, used as the source of truth for benchmarking internal address validation providers. Powered Canada benchmarks, enabling address validation rollout and \textbf{boosting suggestion click rate by 2x}.}
+        \resumeItem{Received “\textbf{far exceeds expectations}” on impact review, an exceptionally rare rating for interns.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Ploomber}{Aug. 2024 -- Dec. 2024}
+      {Software Engineer Intern}{}
+      \resumeItemListStart
+        \resumeItem{Streamlined container orchestration for \textbf{thousands of users} for frameworks like Voila and Streamlit.}
+        \resumeItem{Contributed heavily to deployment optimizations, \textbf{halving the total deployment time}.}
+        \resumeItem{Fixed critical user-facing bugs for application deployment and application configuration, \textbf{leading to 1.25x better conversion rates}.}
+        \resumeItem{Implemented graceful termination and exception handling of applications during and after deployment, enabling efficient resource clean up and \textbf{reducing AWS costs by 15\%}.}
+        \resumeItem{Worked on efficient real-time log sync between application output and displaying it on the front-end, which included auto-refreshed endless scrolling for memory efficiency.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Flojoy}{Jun. 2023 -- Apr. 2024}
+      {Founding Software Engineer}{}
+      \resumeItemListStart
+        \resumeItem{\textbf{Accelerated \$1M+ seed funding} by delivering impactful product demos and rapid prototypes.}
+        \resumeItem{Developed a visual scripting interface for microcontrollers (Arduino, Raspberry Pi Pico) which are extremely resource-constrained, addressing challenges in bundling the runtime environment, bootstrapping code, and the visual scripting interpreter, \textbf{pioneering flow chart programming solutions in this domain}.}
+        \resumeItem{Developed a visual test sequencing system with AI-generation using RAG.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{Compiler} $|$ \emph{Java}}{}
+      \resumeItemListStart
+        \resumeItem{Compiles a subset of C with OOP features to MIPS assembly.}
+        \resumeItem{Implements optimizations such as graph-coloring register allocation.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+  
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {McGill University}{Montreal, QC}
+      {Bachelor of Science in Computer Science}{Sept. 2022 -- Apr. 2027}
+      \resumeItemListStart
+        \resumeItem{GPA: 4.0 / 4.0}
+        \resumeItem{Relevant Courses: Algorithms, Data Structures, Software Design, Applied Machine Learning, Concurrent Programming, Databases, Operating Systems}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------AWARDS-----------
+\section{Awards}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt, topsep=0pt]
+    \item\small{\textbf{Emily Ross Crawford Scholarship} – Awarded to candidates of high academic merit.}
+    \item\small{\textbf{Major Renewable Undergraduate Scholarship} – Merit-based renewable scholarship.}
+    \item\small{\textbf{Dawson Math Challenge Winner} – Mathematics Certificate of Excellence.}
+  \end{itemize}
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Ruby, Typescript, JavaScript, Golang, Java, C, OCaml, SQL} \\
+     \textbf{Database}{: Postgres, MongoDB, (in-memory) Redis} \\
+     \textbf{Frameworks}{: React Native, NextJS, Ruby on Rails} \\
+     \textbf{Developer Tools and Others}{: Docker, GitHub Actions, ElasticSearch, AWS}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
